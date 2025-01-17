@@ -1,0 +1,77 @@
+import java.awt.*;
+
+public class GameGUI extends Frame {
+    public GameGUI() {
+        initComponents();
+    }
+
+    private void initComponents() {
+        // Initialize components
+        label2 = new Label("LIVES:");
+        label3 = new Label("AVAJ");
+        textField1 = new TextField("Enter your Guess");
+        button1 = new Button("SUBMIT");
+        button2 = new Button("SHUFFLE");
+        button3 = new Button("SKIP");
+
+        // Set frame properties
+        setTitle("JUMBLED WORDS");
+        setSize(300, 255);
+        setResizable(false);
+        setLayout(null);
+
+        // Set properties for label2 (LIVES label)
+        label2.setFont(new Font("Verdana", Font.BOLD, 12));
+        add(label2);
+        label2.setBounds(215, 30, 50, 25);
+
+        // Set properties for label3 (Jumbled word display)
+        label3.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 32));
+        label3.setAlignment(Label.CENTER);
+        add(label3);
+        label3.setBounds(40, 55, 185, 55);
+
+        // Set properties for textField1 (Input field for user guesses)
+        textField1.setFont(new Font("Franklin Gothic Book", Font.PLAIN, 18));
+        add(textField1);
+        textField1.setBounds(20, 120, 205, 40);
+
+        // Set properties for button1 (Submit button)
+        add(button1);
+        button1.setBounds(230, 125, 70, 35);
+
+        // Set properties for button2 (Shuffle button)
+        add(button2);
+        button2.setBounds(45, 180, 80, 35);
+
+        // Set properties for button3 (Skip button)
+        add(button3);
+        button3.setBounds(135, 180, 80, 35);
+
+        // Set frame size, location, and visibility
+        setSize(320, 260);
+        setLocationRelativeTo(null); // Center the frame on screen
+        setVisible(true);
+
+        // Add window listener to close the application when the frame is closed
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+
+    // Declare UI components
+    private Label label2;
+    private Label label3;
+    private TextField textField1;
+    private Button button1;
+    private Button button2;
+    private Button button3;
+
+    // Main method to run the application
+    public static void main(String[] args) {
+        new GameGUI();
+    }
+}
